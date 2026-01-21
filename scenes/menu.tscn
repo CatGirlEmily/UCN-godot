@@ -1,0 +1,285 @@
+[gd_scene load_steps=37 format=3 uid="uid://dfuxvy7cpbgnp"]
+
+[ext_resource type="Script" uid="uid://cx6ucd6xk85ju" path="res://scripts/menu/Menu.gd" id="1_7jp70"]
+[ext_resource type="Texture2D" uid="uid://dykiuvl2dhi72" path="res://ref.png" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://clsh03ncgj0yy" path="res://sprites/menu/go.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://8tkd5eiau64" path="res://sprites/menu/bg/7.png" id="2_mhjd8"]
+[ext_resource type="Texture2D" uid="uid://02lt5o8qsi6a" path="res://sprites/menu/go_hover.png" id="3_con2f"]
+[ext_resource type="Script" uid="uid://dy635km2y54a2" path="res://scripts/menu/ai_config.gd" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bt3t51bmbdhvp" path="res://sprites/menu/set_add_1.png" id="5_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dmttbfs6akl5h" path="res://sprites/menu/set_all_0.png" id="5_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bq07gqxmjmj7t" path="res://sprites/menu/set_add_1_click.png" id="6_i6lef"]
+[ext_resource type="Texture2D" uid="uid://crj54phm6sagu" path="res://sprites/menu/set_all_0_click.png" id="6_v86rl"]
+[ext_resource type="Texture2D" uid="uid://c440ghihixtkn" path="res://sprites/menu/set_all_20.png" id="9_70i5f"]
+[ext_resource type="Texture2D" uid="uid://7ehlxtttqmx1" path="res://sprites/menu/setl_all_10.png" id="10_g6gyw"]
+[ext_resource type="Texture2D" uid="uid://ofjl8yourxxc" path="res://sprites/menu/set_all_20_click.png" id="10_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://j5vofuny2lv7" path="res://sprites/menu/set_all_10_click.png" id="11_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://38wnsvv1c1qh" path="res://sprites/menu/set_all_60.png" id="13_mxgkd"]
+[ext_resource type="Texture2D" uid="uid://dep0u8oqphp7h" path="res://sprites/menu/set_all_60_click.png" id="14_g6gyw"]
+[ext_resource type="AudioStream" uid="uid://cqivw45sas5m" path="res://sounds/Eisoptrophobia.mp3" id="17_g6gyw"]
+[ext_resource type="Script" uid="uid://ct5fsh15i6k8h" path="res://scripts/menu/charContainer.gd" id="17_lnf0i"]
+[ext_resource type="Texture2D" uid="uid://bxwo8a68ru3cd" path="res://sprites/menu/office.png" id="18_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://cv0egjgxkkiy1" path="res://sprites/menu/power-ups.png" id="19_oi1it"]
+[ext_resource type="Texture2D" uid="uid://du6dj7y7wdxov" path="res://sprites/menu/challenges.png" id="20_fy8yy"]
+[ext_resource type="Script" uid="uid://bu8blc2ahkmay" path="res://scripts/menu/pointValueDisplay.gd" id="20_lnf0i"]
+[ext_resource type="Texture2D" uid="uid://37yoa37yc0r5" path="res://sprites/menu/point_value.png" id="21_6wigr"]
+[ext_resource type="Script" uid="uid://dntsc7fe5ofl3" path="res://scripts/menu/highScoreDisplay.gd" id="21_ffqrc"]
+[ext_resource type="Texture2D" uid="uid://k7ac0ss0pns7" path="res://sprites/menu/highscore.png" id="22_lnf0i"]
+[ext_resource type="Script" uid="uid://cyqa18cg66rji" path="res://scripts/menu/5020BestDisplay.gd" id="22_x16fv"]
+[ext_resource type="Texture2D" uid="uid://fcrxm1khh50c" path="res://sprites/menu/5020best.png" id="23_ffqrc"]
+[ext_resource type="Texture2D" uid="uid://bvy1ju5vp26rx" path="res://sprites/menu/holddel.png" id="26_0ndyk"]
+[ext_resource type="Texture2D" uid="uid://coimnfj7vupa" path="res://sprites/menu/checkmark_off.png" id="27_48ryc"]
+[ext_resource type="Texture2D" uid="uid://dt4vs53yb6mpj" path="res://sprites/menu/checkmark_on.png" id="28_vhsb5"]
+[ext_resource type="Script" uid="uid://b1vn8x7nldbs6" path="res://scripts/menu/showCharInfo.gd" id="29_vhsb5"]
+[ext_resource type="Script" uid="uid://cyx46eo51jefe" path="res://scripts/menu/visualEffects.gd" id="31_0qewb"]
+[ext_resource type="Texture2D" uid="uid://oh10j8p6v8g4" path="res://sprites/menu/showCharInfo.png" id="32_mhjd8"]
+[ext_resource type="Texture2D" uid="uid://dl4dy5mk1s37y" path="res://sprites/menu/visualEffects.png" id="33_d3h35"]
+[ext_resource type="Texture2D" uid="uid://heqoydwj06um" path="res://sprites/menu/settings.png" id="34_0qewb"]
+
+[sub_resource type="GDScript" id="GDScript_mhjd8"]
+script/source = "extends ColorRect
+"
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_7jp70")
+
+[node name="bgbg" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_right = 1924.0
+offset_bottom = 1087.0
+color = Color(0, 0, 0, 1)
+script = SubResource("GDScript_mhjd8")
+metadata/_edit_lock_ = true
+
+[node name="bleugrid" type="TextureRect" parent="bgbg"]
+modulate = Color(1, 1, 1, 0.23529412)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1923.0
+offset_bottom = 1087.0
+texture = ExtResource("2_mhjd8")
+stretch_mode = 1
+
+[node name="Ref" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 548)
+texture = ExtResource("1_vjb58")
+metadata/_edit_lock_ = true
+
+[node name="Go" type="TextureButton" parent="."]
+offset_left = 1643.0
+offset_top = 903.0
+offset_right = 1893.0
+offset_bottom = 1053.0
+texture_normal = ExtResource("2_con2f")
+texture_hover = ExtResource("3_con2f")
+
+[node name="charContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 38.0
+offset_right = 173.0
+offset_bottom = 238.0
+script = ExtResource("17_lnf0i")
+metadata/_edit_lock_ = true
+
+[node name="ai_config" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1768.0
+offset_top = 14.0
+offset_right = 1768.0
+offset_bottom = 14.0
+script = ExtResource("4_mhnvy")
+
+[node name="0" type="TextureButton" parent="ai_config"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 18.0
+offset_right = 102.0
+offset_bottom = 93.0
+action_mode = 0
+texture_normal = ExtResource("5_g3eks")
+texture_pressed = ExtResource("6_v86rl")
+
+[node name="1" type="TextureButton" parent="ai_config"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 93.0
+offset_right = 102.0
+offset_bottom = 168.0
+action_mode = 0
+texture_normal = ExtResource("5_13sgg")
+texture_pressed = ExtResource("6_i6lef")
+
+[node name="10" type="TextureButton" parent="ai_config"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 168.0
+offset_right = 102.0
+offset_bottom = 243.0
+action_mode = 0
+texture_normal = ExtResource("10_g6gyw")
+texture_pressed = ExtResource("11_3dmrc")
+
+[node name="20" type="TextureButton" parent="ai_config"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 243.0
+offset_right = 102.0
+offset_bottom = 318.0
+action_mode = 0
+texture_normal = ExtResource("9_70i5f")
+texture_pressed = ExtResource("10_mj5lg")
+
+[node name="random" type="TextureButton" parent="ai_config"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 318.0
+offset_right = 102.0
+offset_bottom = 393.0
+action_mode = 0
+texture_normal = ExtResource("13_mxgkd")
+texture_pressed = ExtResource("14_g6gyw")
+
+[node name="opc" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1648.0
+offset_top = 418.0
+offset_right = 1891.0
+offset_bottom = 534.0
+
+[node name="office" type="TextureButton" parent="opc"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 247.0
+offset_bottom = 38.0
+texture_normal = ExtResource("18_rsfmq")
+
+[node name="power-ups" type="TextureButton" parent="opc"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 38.0
+offset_right = 247.0
+offset_bottom = 78.0
+texture_normal = ExtResource("19_oi1it")
+
+[node name="challenges" type="TextureButton" parent="opc"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 78.0
+offset_right = 247.0
+offset_bottom = 118.0
+texture_normal = ExtResource("20_fy8yy")
+
+[node name="PointValueDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1878.2354
+offset_top = 601.24506
+offset_right = 1912.2354
+offset_bottom = 647.24506
+script = ExtResource("20_lnf0i")
+
+[node name="HighScoreDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1878.2354
+offset_top = 690.24506
+offset_right = 1912.2354
+offset_bottom = 736.24506
+script = ExtResource("21_ffqrc")
+
+[node name="5020BestDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1884.0
+offset_top = 769.0
+offset_right = 1889.0
+offset_bottom = 776.0
+script = ExtResource("22_x16fv")
+
+[node name="PointValue" type="Sprite2D" parent="."]
+position = Vector2(1816.5, 561)
+scale = Vector2(0.98125, 0.95238036)
+texture = ExtResource("21_6wigr")
+
+[node name="Highscore" type="Sprite2D" parent="."]
+position = Vector2(1817, 655)
+texture = ExtResource("22_lnf0i")
+
+[node name="5020Best" type="Sprite2D" parent="."]
+position = Vector2(1813, 742)
+texture = ExtResource("23_ffqrc")
+
+[node name="holdDelToRelease" type="Sprite2D" parent="."]
+position = Vector2(1804, 804)
+texture = ExtResource("26_0ndyk")
+
+[node name="Eisoptrophobia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_g6gyw")
+volume_db = -29.578
+autoplay = true
+parameters/looping = true
+
+[node name="ShowCharInfo" type="TextureButton" parent="."]
+offset_left = 1770.0
+offset_top = 861.0
+offset_right = 1802.0
+offset_bottom = 893.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("27_48ryc")
+texture_pressed = ExtResource("28_vhsb5")
+script = ExtResource("29_vhsb5")
+
+[node name="VisualEffects" type="TextureButton" parent="."]
+offset_left = 1770.0
+offset_top = 819.0
+offset_right = 1802.0
+offset_bottom = 851.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("27_48ryc")
+texture_pressed = ExtResource("28_vhsb5")
+script = ExtResource("31_0qewb")
+
+[node name="ShowCharInfoText" type="Sprite2D" parent="."]
+position = Vector2(1726, 874)
+texture = ExtResource("32_mhjd8")
+
+[node name="visualEffectsText" type="Sprite2D" parent="."]
+position = Vector2(1735, 835)
+texture = ExtResource("33_d3h35")
+
+[node name="Settings" type="TextureButton" parent="."]
+offset_left = 1812.0
+offset_top = 817.0
+offset_right = 1890.0
+offset_bottom = 895.0
+action_mode = 0
+texture_normal = ExtResource("34_0qewb")
+
+[node name="OVERLAY0" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 2000.0
+offset_bottom = 1116.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="OVERLAY" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 2000.0
+offset_bottom = 1116.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Go" to="." method="go"]
+[connection signal="toggled" from="ShowCharInfo" to="ShowCharInfo" method="_on_toggled"]
+[connection signal="toggled" from="VisualEffects" to="VisualEffects" method="_on_toggled"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://v48tje5hu6ns"]
+
+[ext_resource type="Texture2D" uid="uid://tk36wmsjcibk" path="res://sprites/menu/char/0.png" id="1_pv7wo"]
+[ext_resource type="Script" uid="uid://d4l7qjrk63psm" path="res://scripts/menu/char.gd" id="1_s8wvp"]
+[ext_resource type="Texture2D" uid="uid://banfwga1nkel3" path="res://sprites/menu/outline.png" id="2_s8wvp"]
+[ext_resource type="Texture2D" uid="uid://c5j4w6deewybb" path="res://sprites/menu/help.png" id="4_aoeg7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0l6ck"]
+
+[node name="Animatronic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 200.0
+script = ExtResource("1_s8wvp")
+
+[node name="char" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pv7wo")
+
+[node name="outline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+texture = ExtResource("2_s8wvp")
+
+[node name="numbers" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 125.0
+offset_top = 174.0
+offset_right = 155.0
+offset_bottom = 214.0
+
+[node name="HelpLabel" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_left = 145.1316
+offset_top = 26.098394
+offset_right = 245.0
+offset_bottom = 153.0
+
+[node name="ColorRect" type="TextureRect" parent="HelpLabel"]
+layout_mode = 0
+offset_left = -0.13160706
+offset_top = -0.098394394
+offset_right = 270.8684
+offset_bottom = 126.9016
+texture = ExtResource("4_aoeg7")
+
+[node name="info" type="Label" parent="HelpLabel"]
+layout_mode = 0
+offset_left = 5.868393
+offset_top = 3.9016056
+offset_right = 313.8684
+offset_bottom = 136.90161
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum lacus non feugiat malesuada. Etiam 
+adasd"
+label_settings = SubResource("LabelSettings_0l6ck")
+autowrap_mode = 2
