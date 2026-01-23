@@ -11,6 +11,9 @@ func play(path: String, vol: int = -10, loop: bool = false, shouldFree: bool = t
 		await sound.finished
 		sound.queue_free()
 
+func forceStop(player):
+	player.stop()
+
 func play_click1(): play("res://sounds/click1.wav")
 func play_click2(): play("res://sounds/click2.wav")
 func play_doorFX(): play("res://sounds/doorFX.wav")

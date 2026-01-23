@@ -3,8 +3,10 @@ extends Node
 var quitTime := 0.0
 var ai := [] # i could not figure out how to map / fill all 50 places with 0
 var spr_char := []
+
 const max_ai := 20
 const default_energy = 10000
+
 const font_bit := [
 	preload("res://sprites/font/bit/0.png"),
 	preload("res://sprites/font/bit/1.png"),
@@ -42,6 +44,32 @@ const font_battery := [
 	preload("res://sprites/font/battery/8.png"),
 	preload("res://sprites/font/battery/9.png")
 ]
+const font_timer := [
+	preload("res://sprites/font/timer-432/0.png"),
+	preload("res://sprites/font/timer-432/1.png"),
+	preload("res://sprites/font/timer-432/2.png"),
+	preload("res://sprites/font/timer-432/3.png"),
+	preload("res://sprites/font/timer-432/4.png"),
+	preload("res://sprites/font/timer-432/5.png"),
+	preload("res://sprites/font/timer-432/6.png"),
+	preload("res://sprites/font/timer-432/7.png"),
+	preload("res://sprites/font/timer-432/8.png"),
+	preload("res://sprites/font/timer-432/9.png"),
+]
+
+const font_timmer := [
+	preload("res://sprites/font/timer-scattered/0.png"),
+	preload("res://sprites/font/timer-scattered/1.png"),
+	preload("res://sprites/font/timer-scattered/2.png"),
+	preload("res://sprites/font/timer-scattered/3.png"),
+	preload("res://sprites/font/timer-scattered/4.png"),
+	preload("res://sprites/font/timer-scattered/5.png"),
+	preload("res://sprites/font/timer-scattered/6.png"),
+	preload("res://sprites/font/timer-scattered/7.png"),
+	preload("res://sprites/font/timer-scattered/8.png"),
+	preload("res://sprites/font/timer-scattered/9.png"),
+]
+
 const help_text = [
 	"Freddy help text",
 	"Bonnie help text",
@@ -115,6 +143,10 @@ var KEYBIND_VENT_UP := "W"
 var KEYBIND_VENT_RIGHT := "F"
 var KEYBIND_FAN := "SPACE"
 var KEYBIND_CAMERA := "S"
+var KEYBIND_MASK := "SHIFT"
+
+var NODE_FAN = null
+var NODE_OFFICE_SCROLL = null
 
 
 func _ready() -> void:
@@ -124,8 +156,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"): get_tree().quit() # dev
 	if event.is_action_pressed("F1") and night.nightFrame >= 1: night.reset() # dev
-	if event.is_action_pressed("F2"): night.reset(); get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	
+	if event.is_action_pressed("F2"): night.reset(); get_tree().change_scene_to_file("res://scenes/menu.tscn")	
 
 func _map() -> void: # assigns 0 to every ai[] entry, and coresponding texture to it
 	ai.resize(50)

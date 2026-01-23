@@ -15,13 +15,24 @@ var temperature := 60
 var energy := global.default_energy # avoiding floating point errors
 var usage := 0
 var camera := false
+var cameraState := 0 
+var mask := false
+var maskState := 0
+var nightSecond := 0
+var nightTenth := 0
+var nightHour := 0
 
-var officeScrollNode = null
 
 var nightFrame := 0
 
 func _process(delta: float) -> void:
 	nightFrame += 1
+	
+	nightSecond = nightFrame/60
+	nightTenth = (nightFrame%60) / 6
+	nightHour = nightSecond/45
+	
+	
 
 func calculate_energy_usage():
 	usage = 0
@@ -49,10 +60,14 @@ func reset():
 	VentRight = 0
 	fan = false
 	camera = false
+	cameraState = 0
+	mask = false
+	maskState = 0
 	
 	fCoin = 0 if not global.POWERUP_3_COINS else 3
 	temperature = 60 if not global.POWERUP_FRIGID else 50
 	energy = global.default_energy if not global.POWERUP_BATTERY else global.default_energy+100
 	nightFrame = 0
 	
-	if officeScrollNode: officeScrollNode.position.x = 0
+	if global.NODE_OFFICE_SCROLL: global.NODE_OFFICE_SCROLL.position.x = 0
+	if global.NODE_FAN: SoundManager.forceStop(global.NODE_FAN)

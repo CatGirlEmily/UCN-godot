@@ -18,38 +18,47 @@ var direction := 1
 
 func _ready() -> void:
 	$animation.hide()
+	$realCameraTrigger.modulate.a = 0
 
 func _process(delta: float) -> void:
-	if not running: return
+	Util.showWhen(self, night.maskState != 1 and night.maskState != 3 and !night.mask)
+	if running: frame_step()
+	
+	$cameraTrigger.modulate.a = 0.3 if night.camera else 1
+	
 
+	$animation.texture = TEXTURE_FRAMES[clamp(frame, 0, 8)]
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(global.KEYBIND_CAMERA): _camera_trigger()
+
+func frame_step():
 	frame += direction
+	print(frame)
 
 	if frame < 0:
 		frame = -1
 		running = false
 		$animation.hide()
-		night.camera = false
+		night.cameraState = 0
 	elif frame > 8:
 		frame = 9
 		running = false
-		$animation.hide()
 		night.camera = true
-
-	$animation.texture = TEXTURE_FRAMES[clamp(frame, 0, 8)]
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("S"): _camera_trigger()
-
+		night.cameraState = 3
 
 func _camera_trigger() -> void:
 	if running: return
+	if not visible: return
+	
 	$animation.show()
 	
 	if night.camera:
-		frame = 8
 		direction = -1
+		night.cameraState = 2
+		night.camera = false
 	else:
-		frame = 0
 		direction = 1
+		night.cameraState = 1
 
 	running = true

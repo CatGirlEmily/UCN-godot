@@ -9,6 +9,9 @@ var fanFrame = 0
 	preload("res://sprites/menu/fan/3.png")
 ]
 
+func _ready() -> void:
+	global.NODE_FAN = $Fan
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_action_pressed(global.KEYBIND_FAN):
 		night.fan = !night.fan

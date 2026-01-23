@@ -22,12 +22,13 @@ func _ready() -> void:
 	$OVERLAY.modulate.a = 0
 
 func _process(delta: float) -> void:
-	$OVERLAY0.modulate.a -= delta * 1
+	$OVERLAY0.modulate.a -= 0.03
 	if entering:
-		$OVERLAY.modulate.a += delta * 1
+		$OVERLAY.modulate.a += 0.03
 		if $OVERLAY.modulate.a >= 1.0:
 			# delay to make the game feel more like ucn with slow clickteam loading
-			await get_tree().create_timer(1).timeout 
+			# depracated because it did not make any sense
+			#await get_tree().create_timer(1).timeout 
 			get_tree().change_scene_to_file("res://scenes/night.tscn")
 
 func go(): # triggered on GO button press via signal

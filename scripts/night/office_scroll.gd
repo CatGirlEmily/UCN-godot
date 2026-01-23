@@ -15,11 +15,12 @@ func _ready() -> void:
 	scrollRightRect.position = rightTrigger.get_global_position()
 	scrollRightRect.size = rightTrigger.get_size()
 	
-	night.officeScrollNode = self
+	global.NODE_OFFICE_SCROLL = self
 
 # ported scale behavior from mamm0n night via chatgpt
 func _process(_delta: float) -> void:
 	if night.nightFrame < 30: return
+	if night.camera: return
 	
 	var mouse_pos = get_global_mouse_position()
 	var viewport_size = get_viewport_rect().size
