@@ -6,7 +6,7 @@ var click_delay := 0
 @onready var help := $HelpLabel
 @onready var icon := $char
 @onready var outline := $outline
-@onready var menu := get_parent().get_parent()
+@onready var NODE_menu := get_parent()
 @onready var outline_t := [
 	preload("res://sprites/menu/outline.png"),
 	preload("res://sprites/menu/outline_hover.png")
@@ -51,6 +51,8 @@ func update_visuals():
 	_numbers()
 
 func _process(_delta: float) -> void:
+	if (NODE_menu.entering): return
+	
 	update_visuals()
 	# delay so holding isnt registered every frame. registers every 3 frames, unless using scroll
 	click_delay += 1

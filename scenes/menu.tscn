@@ -21,6 +21,24 @@
 [ext_resource type="Texture2D" uid="uid://cv0egjgxkkiy1" path="res://sprites/menu/power-ups.png" id="17_rsfmq"]
 [ext_resource type="Texture2D" uid="uid://du6dj7y7wdxov" path="res://sprites/menu/challenges.png" id="18_oi1it"]
 [ext_resource type="Texture2D" uid="uid://7rf7mmd71411" path="res://sprites/menu/tab.png" id="20_fy8yy"]
+[ext_resource type="Texture2D" uid="uid://d1fo54g2dxydl" path="res://sprites/menu/tab/office/0.png" id="21_g54pe"]
+[ext_resource type="Texture2D" uid="uid://lk8svuaae0lc" path="res://sprites/menu/tab/office/1.png" id="22_48ryc"]
+[ext_resource type="Texture2D" uid="uid://ddbr32pchxdxj" path="res://sprites/menu/tab/office/2.png" id="23_vhsb5"]
+[ext_resource type="Texture2D" uid="uid://b3e2yh71f0muv" path="res://sprites/menu/tab/office/3.png" id="24_hwfsl"]
+[ext_resource type="Texture2D" uid="uid://bqybl87p6gyme" path="res://sprites/menu/tab/office/outline1.png" id="25_a04p5"]
+[ext_resource type="Texture2D" uid="uid://b0340p5wdf1q" path="res://sprites/menu/tab/office/2000.png" id="26_48ryc"]
+[ext_resource type="Texture2D" uid="uid://che3kd6hfga5" path="res://sprites/menu/tab/office/ok.png" id="27_b5gwo"]
+[ext_resource type="Texture2D" uid="uid://cxqnghlqmg8xl" path="res://sprites/menu/tab/office/5000.png" id="27_hwfsl"]
+[ext_resource type="Texture2D" uid="uid://cbnjis71srtx4" path="res://sprites/menu/tab/office/8000.png" id="28_a04p5"]
+[ext_resource type="Texture2D" uid="uid://clsh03ncgj0yy" path="res://sprites/menu/go.png" id="31_0ndyk"]
+[ext_resource type="Script" uid="uid://djby6at3yle5g" path="res://scripts/menu/Go.gd" id="31_a04p5"]
+[ext_resource type="Texture2D" uid="uid://02lt5o8qsi6a" path="res://sprites/menu/go_hover.png" id="32_0qewb"]
+[ext_resource type="Script" uid="uid://bxin7g56maryr" path="res://scripts/menu/Overlay.gd" id="34_0qewb"]
+[ext_resource type="Texture2D" uid="uid://k7ac0ss0pns7" path="res://sprites/menu/highscore.png" id="34_jlmas"]
+[ext_resource type="Texture2D" uid="uid://fcrxm1khh50c" path="res://sprites/menu/5020best.png" id="35_qfcyc"]
+[ext_resource type="Texture2D" uid="uid://bvy1ju5vp26rx" path="res://sprites/menu/holddel.png" id="36_spe5f"]
+[ext_resource type="Texture2D" uid="uid://oh10j8p6v8g4" path="res://sprites/menu/showCharInfo.png" id="37_jcbs5"]
+[ext_resource type="Texture2D" uid="uid://dl4dy5mk1s37y" path="res://sprites/menu/visualEffects.png" id="38_jamij"]
 
 [node name="menu" type="Node2D" unique_id=988281303]
 texture_repeat = 2
@@ -168,10 +186,129 @@ offset_bottom = 642.0
 texture = ExtResource("20_fy8yy")
 metadata/_edit_lock_ = true
 
-[node name="Ref" type="Sprite2D" parent="." unique_id=1989011523]
+[node name="officeTab" type="Control" parent="Customization" unique_id=1773798873]
 visible = false
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -382.0
+offset_right = 254.0
+offset_bottom = 642.0
+metadata/_edit_lock_ = true
+
+[node name="0" type="TextureButton" parent="Customization/officeTab" unique_id=1014461270]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 242.0
+offset_bottom = 236.0
+texture_normal = ExtResource("21_g54pe")
+metadata/_edit_lock_ = true
+
+[node name="1" type="TextureButton" parent="Customization/officeTab" unique_id=971984571]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 256.0
+offset_right = 242.0
+offset_bottom = 476.0
+texture_normal = ExtResource("22_48ryc")
+metadata/_edit_lock_ = true
+
+[node name="2" type="TextureButton" parent="Customization/officeTab" unique_id=85074650]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 496.0
+offset_right = 242.0
+offset_bottom = 716.0
+texture_normal = ExtResource("23_vhsb5")
+metadata/_edit_lock_ = true
+
+[node name="3" type="TextureButton" parent="Customization/officeTab" unique_id=58437106]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 736.0
+offset_right = 242.0
+offset_bottom = 956.0
+texture_normal = ExtResource("24_hwfsl")
+metadata/_edit_lock_ = true
+
+[node name="OUTLINE" type="Sprite2D" parent="Customization/officeTab" unique_id=1779378053]
+position = Vector2(132, 126)
+texture = ExtResource("25_a04p5")
+
+[node name="2000" type="Sprite2D" parent="Customization/officeTab" unique_id=1486357663]
+position = Vector2(135, 370)
+texture = ExtResource("26_48ryc")
+
+[node name="5000" type="Sprite2D" parent="Customization/officeTab" unique_id=1001504395]
+position = Vector2(135, 610)
+texture = ExtResource("27_hwfsl")
+
+[node name="8000" type="Sprite2D" parent="Customization/officeTab" unique_id=496702125]
+position = Vector2(135, 850)
+texture = ExtResource("28_a04p5")
+
+[node name="ok" type="TextureButton" parent="Customization/officeTab" unique_id=180301541]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 966.0
+offset_right = 272.0
+offset_bottom = 1021.0
+scale = Vector2(0.8818182, 0.8818182)
+texture_normal = ExtResource("27_b5gwo")
+
+[node name="Go" type="TextureButton" parent="." unique_id=1637977749]
+offset_left = 1644.0
+offset_top = 894.0
+offset_right = 1894.0
+offset_bottom = 1044.0
+texture_normal = ExtResource("31_0ndyk")
+texture_pressed = ExtResource("32_0qewb")
+script = ExtResource("31_a04p5")
+
+[node name="Ref" type="Sprite2D" parent="." unique_id=1989011523]
 position = Vector2(960, 540)
 texture = ExtResource("1_vjb58")
+metadata/_edit_lock_ = true
+
+[node name="STATIC" type="Control" parent="." unique_id=2112220855]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1644.0
+offset_top = 894.0
+offset_right = 1684.0
+offset_bottom = 934.0
+
+[node name="Highscore" type="Sprite2D" parent="STATIC" unique_id=94298047]
+position = Vector2(172, -247)
+texture = ExtResource("34_jlmas")
+
+[node name="5020Best" type="Sprite2D" parent="STATIC" unique_id=1011108803]
+position = Vector2(169, -160)
+texture = ExtResource("35_qfcyc")
+
+[node name="holddel" type="Sprite2D" parent="STATIC" unique_id=637241014]
+position = Vector2(161, -97)
+texture = ExtResource("36_spe5f")
+
+[node name="ShowCharInfo" type="Sprite2D" parent="STATIC" unique_id=1159068569]
+position = Vector2(82, -28)
+texture = ExtResource("37_jcbs5")
+
+[node name="VisualEffects" type="Sprite2D" parent="STATIC" unique_id=1804267787]
+position = Vector2(91, -67)
+texture = ExtResource("38_jamij")
+
+[node name="OVERLAY" type="ColorRect" parent="." unique_id=1538423071]
+visible = false
+z_index = 99
+y_sort_enabled = true
+offset_left = -104.0
+offset_top = -64.0
+offset_right = 2053.0
+offset_bottom = 1140.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("34_0qewb")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="AIControlBar/set0" to="AIControlBar" method="set_ai" binds= [true, 0]]
@@ -182,3 +319,9 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Customization/buttons/office" to="Customization" method="_office_tab"]
 [connection signal="pressed" from="Customization/buttons/powerups" to="Customization" method="_powerups_tab"]
 [connection signal="pressed" from="Customization/buttons/challenges" to="Customization" method="_challenge_tab"]
+[connection signal="pressed" from="Customization/officeTab/0" to="Customization" method="_pick_office" binds= [0]]
+[connection signal="pressed" from="Customization/officeTab/1" to="Customization" method="_pick_office" binds= [1]]
+[connection signal="pressed" from="Customization/officeTab/2" to="Customization" method="_pick_office" binds= [2]]
+[connection signal="pressed" from="Customization/officeTab/3" to="Customization" method="_pick_office" binds= [3]]
+[connection signal="pressed" from="Customization/officeTab/ok" to="Customization" method="_OK"]
+[connection signal="pressed" from="Go" to="OVERLAY" method="_on_go_pressed"]

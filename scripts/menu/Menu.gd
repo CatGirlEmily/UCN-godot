@@ -1,7 +1,7 @@
 extends Node2D
 
 const slot := preload("res://scenes/animatronic.tscn")
-
+var entering := false
 var tabVisible := false
 
 func _ready() -> void:

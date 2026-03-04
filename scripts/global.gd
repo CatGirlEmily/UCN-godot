@@ -124,7 +124,7 @@ const help_text = [
 	"phone guy"
 ]
 
-var HIGH_SCORE := randi_range(0, max_ai*10*50)
+var HIGH_SCORE := 10000 #randi_range(0, max_ai*10*50)
 var BEST_TIME := randi_range(0,2700)
 
 var POWERUP_FRIGID := false
@@ -135,7 +135,7 @@ var POWERUP_BATTERY := false
 
 var showCharInfo := false
 var visualEffects := false
-var office := 3
+var office := 0
 var windowType := Input.MOUSE_MODE_CONFINED
 
 var KEYBIND_LEFT_DOOR := "A"
