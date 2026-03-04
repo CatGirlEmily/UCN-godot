@@ -51,6 +51,7 @@ func update_visuals():
 	_numbers()
 
 func _process(_delta: float) -> void:
+	update_visuals()
 	# delay so holding isnt registered every frame. registers every 3 frames, unless using scroll
 	click_delay += 1
 	
@@ -83,6 +84,4 @@ func modify_ai(i: int, b: bool = true, b2: bool = true):
 	if i2 == global.ai[index]: return
 	SoundManager.play_click2()
 	update_visuals()
-	menu.update_points()
 	if b2: click_delay = 0
-	

@@ -25,12 +25,11 @@ func _process(delta: float) -> void:
 
 	$animation.texture = TEXTURE_FRAMES[clamp(frame, 0, 6)]
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(global.KEYBIND_MASK): _mask_trigger()
 
 func frame_step():
 	frame += direction
-	print(frame)
 
 	if frame < 0:
 		frame = -1
@@ -44,6 +43,7 @@ func frame_step():
 		night.maskState = 3
 
 func _mask_trigger() -> void:
+	if night.cameraState > 0: return
 	if running: return
 	if not visible: return
 	

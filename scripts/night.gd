@@ -25,13 +25,14 @@ var nightHour := 0
 
 var nightFrame := 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	nightFrame += 1
 	
+	@warning_ignore_start("integer_division")
 	nightSecond = nightFrame/60
 	nightTenth = (nightFrame%60) / 6
 	nightHour = nightSecond/45
-	
+	@warning_ignore_restore("integer_division")
 	
 
 func calculate_energy_usage():

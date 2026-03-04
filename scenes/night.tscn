@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://blg1hawjors88"]
+[gd_scene format=4 uid="uid://blg1hawjors88"]
 
 [ext_resource type="Script" uid="uid://crul4nfoi4nb0" path="res://scripts/night/office_scroll.gd" id="1_w6rke"]
 [ext_resource type="Texture2D" uid="uid://dvv6k7mmu58hs" path="res://sprites/night/office/3.png" id="2_7dt87"]
@@ -46,16 +46,16 @@ tags = {
 }
 loop = true
 
-[node name="night" type="Node2D"]
+[node name="night" type="Node2D" unique_id=1544393774]
 metadata/_edit_lock_ = true
 
-[node name="blackbg" type="ColorRect" parent="."]
+[node name="blackbg" type="ColorRect" parent="." unique_id=810238450]
 offset_right = 1935.0
 offset_bottom = 1093.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="office_scroll" type="Control" parent="."]
+[node name="office_scroll" type="Control" parent="." unique_id=689723096]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1.0
@@ -64,20 +64,20 @@ offset_bottom = 40.0
 script = ExtResource("1_w6rke")
 metadata/_edit_lock_ = true
 
-[node name="Office" type="Sprite2D" parent="office_scroll"]
+[node name="Office" type="Sprite2D" parent="office_scroll" unique_id=1276409086]
 position = Vector2(1250, 540)
 texture = ExtResource("2_7dt87")
 script = ExtResource("2_odwg0")
 metadata/_edit_lock_ = true
 
-[node name="Controllable" type="Control" parent="office_scroll"]
+[node name="Controllable" type="Control" parent="office_scroll" unique_id=2137051251]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Door" type="Control" parent="office_scroll/Controllable"]
+[node name="Door" type="Control" parent="office_scroll/Controllable" unique_id=1119528914]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -85,35 +85,35 @@ script = ExtResource("4_s11eh")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Left" type="Sprite2D" parent="office_scroll/Controllable/Door"]
+[node name="Left" type="Sprite2D" parent="office_scroll/Controllable/Door" unique_id=1289781453]
 position = Vector2(318, 629)
 metadata/_edit_lock_ = true
 
-[node name="Right" type="Sprite2D" parent="office_scroll/Controllable/Door"]
+[node name="Right" type="Sprite2D" parent="office_scroll/Controllable/Door" unique_id=990321472]
 position = Vector2(2147, 628)
 metadata/_edit_lock_ = true
 
-[node name="Desk" type="Sprite2D" parent="office_scroll/Controllable"]
+[node name="Desk" type="Sprite2D" parent="office_scroll/Controllable" unique_id=1090664574]
 position = Vector2(1214, 697)
 texture = ExtResource("6_vdi54")
 script = ExtResource("5_3hi2f")
 metadata/_edit_lock_ = true
 
-[node name="Fan" type="AudioStreamPlayer" parent="office_scroll/Controllable/Desk"]
+[node name="Fan" type="AudioStreamPlayer" parent="office_scroll/Controllable/Desk" unique_id=1002801497]
 stream = SubResource("AudioStreamOggVorbis_3hi2f")
 volume_db = -10.0
 
-[node name="VentRight" type="Sprite2D" parent="office_scroll/Controllable"]
+[node name="VentRight" type="Sprite2D" parent="office_scroll/Controllable" unique_id=1558778940]
 position = Vector2(2384, 936)
 script = ExtResource("10_p5xwe")
 metadata/_edit_lock_ = true
 
-[node name="VentUp" type="Sprite2D" parent="office_scroll/Controllable"]
+[node name="VentUp" type="Sprite2D" parent="office_scroll/Controllable" unique_id=37550580]
 position = Vector2(1050, 226)
 script = ExtResource("3_f6bwt")
 metadata/_edit_lock_ = true
 
-[node name="scrollTrigger" type="Control" parent="."]
+[node name="scrollTrigger" type="Control" parent="." unique_id=173209367]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -121,7 +121,7 @@ offset_bottom = 40.0
 script = ExtResource("9_vdi54")
 metadata/_edit_lock_ = true
 
-[node name="scrollRight" type="ColorRect" parent="scrollTrigger"]
+[node name="scrollRight" type="ColorRect" parent="scrollTrigger" unique_id=1880714937]
 layout_mode = 0
 offset_left = 1092.0
 offset_top = -59.0
@@ -130,7 +130,7 @@ offset_bottom = 1136.0
 color = Color(0, 1, 1, 0.5372549)
 metadata/_edit_lock_ = true
 
-[node name="scrollLeft" type="ColorRect" parent="scrollTrigger"]
+[node name="scrollLeft" type="ColorRect" parent="scrollTrigger" unique_id=891833744]
 layout_mode = 0
 offset_left = -15.0
 offset_top = -71.0
@@ -139,12 +139,12 @@ offset_bottom = 1124.0
 color = Color(0.9457832, 0.8272372, 1, 0.5372549)
 metadata/_edit_lock_ = true
 
-[node name="Ref2" type="Sprite2D" parent="."]
+[node name="Ref2" type="Sprite2D" parent="." unique_id=1068924539]
 visible = false
 position = Vector2(960, 540)
 texture = ExtResource("7_3hi2f")
 
-[node name="Camera" type="Control" parent="."]
+[node name="Camera" type="Control" parent="." unique_id=865869427]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 35.0
@@ -155,13 +155,13 @@ script = ExtResource("25_182b2")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="animation" type="Sprite2D" parent="Camera"]
+[node name="animation" type="Sprite2D" parent="Camera" unique_id=1207053625]
 visible = false
 position = Vector2(924.9999, 535.00006)
 scale = Vector2(3.9999998, 3.9999998)
 texture = ExtResource("26_4orbg")
 
-[node name="cameraTrigger" type="TextureRect" parent="Camera"]
+[node name="cameraTrigger" type="TextureRect" parent="Camera" unique_id=909029585]
 layout_mode = 0
 offset_left = 1041.0
 offset_top = 1015.0
@@ -171,7 +171,7 @@ mouse_filter = 0
 texture = ExtResource("13_ux3fn")
 metadata/_edit_lock_ = true
 
-[node name="realCameraTrigger" type="ColorRect" parent="Camera"]
+[node name="realCameraTrigger" type="ColorRect" parent="Camera" unique_id=2035544413]
 layout_mode = 0
 offset_left = 1042.0
 offset_top = 1015.0
@@ -180,14 +180,14 @@ offset_bottom = 1095.0
 color = Color(1, 0.14509805, 1, 0.5372549)
 metadata/_edit_lock_ = true
 
-[node name="system" type="Control" parent="Camera"]
+[node name="system" type="Control" parent="Camera" unique_id=152543699]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Mask" type="Control" parent="."]
+[node name="Mask" type="Control" parent="." unique_id=1251274794]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -196,18 +196,18 @@ script = ExtResource("15_nbeec")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="animation" type="Sprite2D" parent="Mask"]
+[node name="animation" type="Sprite2D" parent="Mask" unique_id=340493640]
 visible = false
 position = Vector2(960, 540)
 scale = Vector2(3.9999998, 3.9999998)
 texture = ExtResource("20_t5mjf")
 
-[node name="maskTrigger" type="Sprite2D" parent="Mask"]
+[node name="maskTrigger" type="Sprite2D" parent="Mask" unique_id=391779619]
 position = Vector2(682, 1040)
 texture = ExtResource("12_4sr4e")
 metadata/_edit_lock_ = true
 
-[node name="realMaskTrigger" type="ColorRect" parent="Mask"]
+[node name="realMaskTrigger" type="ColorRect" parent="Mask" unique_id=1914683792]
 layout_mode = 0
 offset_left = 441.0
 offset_top = 1020.0
@@ -216,7 +216,7 @@ offset_bottom = 1100.0
 color = Color(1, 0.14509805, 0.19215687, 0.5372549)
 metadata/_edit_lock_ = true
 
-[node name="constOverlay" type="Control" parent="."]
+[node name="constOverlay" type="Control" parent="." unique_id=472476567]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -224,13 +224,13 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="fcoin" type="Sprite2D" parent="constOverlay"]
+[node name="fcoin" type="Sprite2D" parent="constOverlay" unique_id=699300606]
 modulate = Color(1, 1, 1, 0.29411766)
 position = Vector2(80, 70)
 texture = ExtResource("11_ccv5v")
 metadata/_edit_lock_ = true
 
-[node name="battery" type="Control" parent="constOverlay"]
+[node name="battery" type="Control" parent="constOverlay" unique_id=359834049]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -238,32 +238,32 @@ script = ExtResource("16_4esoo")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="percent" type="Sprite2D" parent="constOverlay/battery"]
+[node name="percent" type="Sprite2D" parent="constOverlay/battery" unique_id=1560843544]
 position = Vector2(154, 922)
 texture = ExtResource("12_mxwfo")
 metadata/_edit_lock_ = true
 
-[node name="usageText" type="Sprite2D" parent="constOverlay/battery"]
+[node name="usageText" type="Sprite2D" parent="constOverlay/battery" unique_id=1081228859]
 position = Vector2(64, 994)
 texture = ExtResource("17_p5xwe")
 metadata/_edit_lock_ = true
 
-[node name="sin" type="Sprite2D" parent="constOverlay/battery"]
+[node name="sin" type="Sprite2D" parent="constOverlay/battery" unique_id=1455015723]
 position = Vector2(118.99988, 928.62524)
 texture = ExtResource("17_f6bwt")
 metadata/_edit_lock_ = true
 
-[node name="dec" type="Sprite2D" parent="constOverlay/battery"]
+[node name="dec" type="Sprite2D" parent="constOverlay/battery" unique_id=738989653]
 position = Vector2(85.00012, 929.62524)
 texture = ExtResource("17_f6bwt")
 metadata/_edit_lock_ = true
 
-[node name="cen" type="Sprite2D" parent="constOverlay/battery"]
+[node name="cen" type="Sprite2D" parent="constOverlay/battery" unique_id=1252991043]
 position = Vector2(50.000122, 928.62524)
 texture = ExtResource("20_eiy71")
 metadata/_edit_lock_ = true
 
-[node name="usageRect" type="ColorRect" parent="constOverlay/battery"]
+[node name="usageRect" type="ColorRect" parent="constOverlay/battery" unique_id=1491677022]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 955.0
@@ -272,7 +272,7 @@ offset_bottom = 984.0
 color = Color(0.09411765, 0.10980392, 0.09411765, 1)
 metadata/_edit_lock_ = true
 
-[node name="usageBg" type="ColorRect" parent="constOverlay/battery"]
+[node name="usageBg" type="ColorRect" parent="constOverlay/battery" unique_id=1925445654]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 958.0
@@ -281,7 +281,7 @@ offset_bottom = 982.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="UsageBar" type="ColorRect" parent="constOverlay/battery"]
+[node name="UsageBar" type="ColorRect" parent="constOverlay/battery" unique_id=240427463]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 958.0
@@ -290,7 +290,7 @@ offset_bottom = 982.0
 color = Color(1, 1, 0.9411765, 0.8901961)
 metadata/_edit_lock_ = true
 
-[node name="temperature" type="Control" parent="constOverlay"]
+[node name="temperature" type="Control" parent="constOverlay" unique_id=1623299584]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -298,29 +298,29 @@ script = ExtResource("15_7xgsy")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="degree" type="Sprite2D" parent="constOverlay/temperature"]
+[node name="degree" type="Sprite2D" parent="constOverlay/temperature" unique_id=1581300524]
 position = Vector2(1877, 1008)
 texture = ExtResource("16_dfdsg")
 metadata/_edit_lock_ = true
 
-[node name="sin" type="Sprite2D" parent="constOverlay/temperature"]
+[node name="sin" type="Sprite2D" parent="constOverlay/temperature" unique_id=820997564]
 position = Vector2(1854, 1027.6251)
 scale = Vector2(0.78571427, 0.7633348)
 texture = ExtResource("17_f6bwt")
 metadata/_edit_lock_ = true
 
-[node name="dec" type="Sprite2D" parent="constOverlay/temperature"]
+[node name="dec" type="Sprite2D" parent="constOverlay/temperature" unique_id=1258698892]
 position = Vector2(1829.0001, 1027.6251)
 scale = Vector2(0.78571427, 0.7633348)
 texture = ExtResource("18_kyeot")
 metadata/_edit_lock_ = true
 
-[node name="cen" type="Sprite2D" parent="constOverlay/temperature"]
+[node name="cen" type="Sprite2D" parent="constOverlay/temperature" unique_id=1269957537]
 position = Vector2(1804.0001, 1027.6251)
 scale = Vector2(0.78571427, 0.7633348)
 metadata/_edit_lock_ = true
 
-[node name="timer" type="Control" parent="constOverlay"]
+[node name="timer" type="Control" parent="constOverlay" unique_id=494244058]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -328,47 +328,47 @@ script = ExtResource("25_igavh")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="a" type="Sprite2D" parent="constOverlay/timer"]
+[node name="a" type="Sprite2D" parent="constOverlay/timer" unique_id=1219422068]
 position = Vector2(1812, 93)
 texture = ExtResource("26_nbeec")
 metadata/_edit_lock_ = true
 
-[node name="aa" type="Sprite2D" parent="constOverlay/timer"]
+[node name="aa" type="Sprite2D" parent="constOverlay/timer" unique_id=2015960958]
 position = Vector2(1837, 93)
 texture = ExtResource("26_nbeec")
 metadata/_edit_lock_ = true
 
-[node name="aaa" type="Sprite2D" parent="constOverlay/timer"]
+[node name="aaa" type="Sprite2D" parent="constOverlay/timer" unique_id=982102097]
 position = Vector2(1854, 93)
 texture = ExtResource("26_nbeec")
 metadata/_edit_lock_ = true
 
-[node name="aaaa" type="Sprite2D" parent="constOverlay/timer"]
+[node name="aaaa" type="Sprite2D" parent="constOverlay/timer" unique_id=1198654513]
 position = Vector2(1878, 93)
 texture = ExtResource("26_nbeec")
 metadata/_edit_lock_ = true
 
-[node name="am" type="Sprite2D" parent="constOverlay/timer"]
+[node name="am" type="Sprite2D" parent="constOverlay/timer" unique_id=1603834852]
 position = Vector2(1866, 67)
 texture = ExtResource("26_b60k4")
 metadata/_edit_lock_ = true
 
-[node name="colon" type="Sprite2D" parent="constOverlay/timer"]
+[node name="colon" type="Sprite2D" parent="constOverlay/timer" unique_id=909501358]
 position = Vector2(1825, 93)
 texture = ExtResource("27_nbeec")
 metadata/_edit_lock_ = true
 
-[node name="dot" type="Sprite2D" parent="constOverlay/timer"]
+[node name="dot" type="Sprite2D" parent="constOverlay/timer" unique_id=344857239]
 position = Vector2(1867, 93)
 texture = ExtResource("28_t5mjf")
 metadata/_edit_lock_ = true
 
-[node name="1-xam" type="Sprite2D" parent="constOverlay/timer"]
+[node name="1-xam" type="Sprite2D" parent="constOverlay/timer" unique_id=1380582547]
 position = Vector2(1805, 58)
 texture = ExtResource("29_gl00i")
 metadata/_edit_lock_ = true
 
-[node name="2-am" type="Sprite2D" parent="constOverlay/timer"]
+[node name="2-am" type="Sprite2D" parent="constOverlay/timer" unique_id=677601062]
 position = Vector2(1831, 58)
 texture = ExtResource("29_gl00i")
 metadata/_edit_lock_ = true

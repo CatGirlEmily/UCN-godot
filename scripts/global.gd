@@ -5,7 +5,8 @@ var ai := [] # i could not figure out how to map / fill all 50 places with 0
 var spr_char := []
 
 const max_ai := 20
-const default_energy = 10000
+const default_energy := 10000
+const radom_randomizer := 0.75
 
 const font_bit := [
 	preload("res://sprites/font/bit/0.png"),
@@ -123,8 +124,8 @@ const help_text = [
 	"phone guy"
 ]
 
-var HIGH_SCORE = randi_range(0, max_ai*10*50)
-var BEST_TIME = randi_range(0,2700)
+var HIGH_SCORE := randi_range(0, max_ai*10*50)
+var BEST_TIME := randi_range(0,2700)
 
 var POWERUP_FRIGID := false
 var POWERUP_3_COINS := false
@@ -132,10 +133,10 @@ var POWERUP_DD_REPEL := false
 var POWERUP_BATTERY := false
 
 
-var showCharInfo = false
-var visualEffects = false
-var office = 3
-var windowType = Input.MOUSE_MODE_CONFINED
+var showCharInfo := false
+var visualEffects := false
+var office := 3
+var windowType := Input.MOUSE_MODE_CONFINED
 
 var KEYBIND_LEFT_DOOR := "A"
 var KEYBIND_RIGHT_DOOR := "D"

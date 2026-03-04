@@ -1,6 +1,6 @@
 extends Node
 
-func play(path: String, vol: int = -10, loop: bool = false, shouldFree: bool = true):
+func play(path: String, vol: int = -10, _loop: bool = false, shouldFree: bool = true):
 	var sound := AudioStreamPlayer.new()
 	sound.stream = load(path)
 	sound.volume_db = vol

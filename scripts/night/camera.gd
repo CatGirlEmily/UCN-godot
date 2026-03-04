@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 	$animation.texture = TEXTURE_FRAMES[clamp(frame, 0, 8)]
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(global.KEYBIND_CAMERA): _camera_trigger()
 
 func frame_step():
