@@ -574,6 +574,7 @@ texture = ExtResource("1_vjb58")
 [connection signal="pressed" from="AIControlBar/set20" to="AIControlBar" method="set_ai" binds= [true, 20]]
 [connection signal="pressed" from="AIControlBar/radom" to="AIControlBar" method="set_ai" binds= [false, 0, true]]
 [connection signal="toggled" from="Toggles/vfx" to="Toggles" method="_vfx"]
+[connection signal="toggled" from="Toggles/sci" to="Toggles" method="_sci"]
 [connection signal="pressed" from="Go" to="OVERLAY" method="_on_go_pressed"]
 [connection signal="pressed" from="Customization/buttons/office" to="Customization" method="_office_tab"]
 [connection signal="pressed" from="Customization/buttons/powerups" to="Customization" method="_powerups_tab"]
