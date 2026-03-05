@@ -153,9 +153,10 @@ var NODE_OFFICE_SCROLL = null
 func _ready() -> void:
 	_map()
 	Input.set_mouse_mode(windowType)
+	_loadSaveData()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ESC"): get_tree().quit() # dev
+	if event.is_action_pressed("ESC"): saveData(); get_tree().quit() # dev
 	if event.is_action_pressed("F1") and night.nightFrame >= 1: night.reset() # dev
 	if event.is_action_pressed("F2"): night.reset(); get_tree().change_scene_to_file("res://scenes/menu.tscn")	
 
@@ -166,7 +167,50 @@ func _map() -> void: # assigns 0 to every ai[] entry, and coresponding texture t
 		ai[i] = 0
 		spr_char[i] = "res://sprites/menu/char/%d.png" % i
 
-func sum_points():
-	var a = 0
-	for i in ai.size(): a += ai[i] * 10
-	return a
+func _loadSaveData():
+	var save = ConfigFile.new()
+	var response = save.load("user://data")
+	
+	if response == OK:
+		showCharInfo = save.get_value("ucn", "sci")
+		visualEffects = save.get_value("ucn", "vfx")
+		office = save.get_value("ucn", "office")
+		HIGH_SCORE = save.get_value("ucn", "score")
+		BEST_TIME = save.get_value("ucn","best")
+		POWERUP_FRIGID = save.get_value("ucn","p1")
+		POWERUP_3_COINS = save.get_value("ucn","p2")
+		POWERUP_DD_REPEL = save.get_value("ucn","p3")
+		POWERUP_BATTERY = save.get_value("ucn","p4")
+	else:
+		saveData()
+
+func deleteSaveData():
+	showCharInfo = false
+	visualEffects = false
+	office = 0
+	HIGH_SCORE = 0
+	BEST_TIME = 0
+	POWERUP_FRIGID = false
+	POWERUP_BATTERY = false
+	POWERUP_3_COINS = false
+	POWERUP_DD_REPEL = false
+	saveData()
+	
+func saveData():
+	var save = ConfigFile.new()
+	save.set_value("ucn", "sci", showCharInfo)
+	save.set_value("ucn", "vfx", visualEffects)
+	save.set_value("ucn", "office", office)
+	save.set_value("ucn", "score", HIGH_SCORE)
+	save.set_value("ucn", "best", BEST_TIME)
+	save.set_value("ucn", "p1", POWERUP_FRIGID)
+	save.set_value("ucn", "p2", POWERUP_3_COINS)
+	save.set_value("ucn", "p3", POWERUP_DD_REPEL)
+	save.set_value("ucn", "p4", POWERUP_BATTERY)
+	
+	save.save("user://data")
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		saveData()
+		print("quitting!")

@@ -20,7 +20,7 @@ func _ready() -> void:
 	$animation.hide()
 	$realCameraTrigger.modulate.a = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Util.showWhen(self, night.maskState != 1 and night.maskState != 3 and !night.mask)
 	if running: frame_step()
 	

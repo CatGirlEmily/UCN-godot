@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d217506oe2p01"]
+
+[node name="Console" type="Control" unique_id=2070378425]
+z_index = 98
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="static" type="Control" parent="." unique_id=1068873403]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="ColorRect" parent="static" unique_id=610367816]
+layout_mode = 0
+offset_right = 797.0
+offset_bottom = 458.0
+color = Color(0.40756536, 0.4075654, 0.40756524, 1)
+
+[node name="inside" type="ColorRect" parent="static" unique_id=857053525]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 25.0
+offset_right = 773.0
+offset_bottom = 398.0
+color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+
+[node name="Console" type="Label" parent="static" unique_id=1684753247]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 24.0
+text = "Console"
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=881889340]
+modulate = Color(1.7686467, 1.7686467, 1.7686467, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 412.0
+offset_right = 773.0
+offset_bottom = 437.0
+context_menu_enabled = false
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false

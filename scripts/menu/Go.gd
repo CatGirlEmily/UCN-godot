@@ -5,6 +5,8 @@ var nightscene := preload("res://scenes/night.tscn")
 
 func _pressed() -> void:
 	if (NODE_menu.entering): return
+	global.saveData()
 	NODE_menu.entering = true
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_packed(nightscene)
+	

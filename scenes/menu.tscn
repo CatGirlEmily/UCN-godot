@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bqybl87p6gyme" path="res://sprites/menu/tab/office/outline1.png" id="25_a04p5"]
 [ext_resource type="Texture2D" uid="uid://b0340p5wdf1q" path="res://sprites/menu/tab/office/2000.png" id="26_48ryc"]
 [ext_resource type="Texture2D" uid="uid://che3kd6hfga5" path="res://sprites/menu/tab/office/ok.png" id="27_b5gwo"]
+[ext_resource type="Texture2D" uid="uid://heqoydwj06um" path="res://sprites/menu/settings.png" id="27_dg0of"]
 [ext_resource type="Texture2D" uid="uid://cxqnghlqmg8xl" path="res://sprites/menu/tab/office/5000.png" id="27_hwfsl"]
 [ext_resource type="Texture2D" uid="uid://cbnjis71srtx4" path="res://sprites/menu/tab/office/8000.png" id="28_a04p5"]
 [ext_resource type="Texture2D" uid="uid://clsh03ncgj0yy" path="res://sprites/menu/go.png" id="31_0ndyk"]
@@ -39,6 +40,21 @@
 [ext_resource type="Texture2D" uid="uid://bvy1ju5vp26rx" path="res://sprites/menu/holddel.png" id="36_spe5f"]
 [ext_resource type="Texture2D" uid="uid://oh10j8p6v8g4" path="res://sprites/menu/showCharInfo.png" id="37_jcbs5"]
 [ext_resource type="Texture2D" uid="uid://dl4dy5mk1s37y" path="res://sprites/menu/visualEffects.png" id="38_jamij"]
+[ext_resource type="Texture2D" uid="uid://37yoa37yc0r5" path="res://sprites/menu/point_value.png" id="38_nsg6j"]
+[ext_resource type="Script" uid="uid://5fdvmysc6gx7" path="res://scripts/menu/toggles.gd" id="39_jcbs5"]
+[ext_resource type="Texture2D" uid="uid://coimnfj7vupa" path="res://sprites/menu/checkmark_off.png" id="39_spe5f"]
+[ext_resource type="Texture2D" uid="uid://dt4vs53yb6mpj" path="res://sprites/menu/checkmark_on.png" id="40_jcbs5"]
+[ext_resource type="Script" uid="uid://ca8rb2usvwpyn" path="res://scripts/menu/PointsValue.gd" id="42_qwtqu"]
+[ext_resource type="Script" uid="uid://bca1nn4dr5vne" path="res://scripts/menu/Highscore.gd" id="44_qwtqu"]
+[ext_resource type="Script" uid="uid://bpyycqie3kpwt" path="res://scripts/menu/BestTime.gd" id="47_tg78l"]
+[ext_resource type="Texture2D" uid="uid://dnknmdtmu77pc" path="res://sprites/font/timer-scattered/0.png" id="48_055ta"]
+[ext_resource type="Texture2D" uid="uid://dfhv17m642cmj" path="res://sprites/font/timer-scattered/3.png" id="49_6jp1x"]
+[ext_resource type="Texture2D" uid="uid://kkqlw1440tdp" path="res://sprites/menu/tab/powerups/0.png" id="49_al2sc"]
+[ext_resource type="Texture2D" uid="uid://dq6uy36rcy1on" path="res://sprites/font/timer-scattered/4.png" id="50_dslam"]
+[ext_resource type="Texture2D" uid="uid://cm7t5ipdxf7ui" path="res://sprites/menu/tab/powerups/1.png" id="50_ygt0d"]
+[ext_resource type="Texture2D" uid="uid://dynlcyayevc0h" path="res://sprites/menu/tab/powerups/2.png" id="51_7o74l"]
+[ext_resource type="Texture2D" uid="uid://y7ay4jnecox1" path="res://sprites/menu/tab/powerups/3.png" id="52_p2357"]
+[ext_resource type="Texture2D" uid="uid://cdw8ojj8rvjdt" path="res://sprites/menu/tab/powerups/outline1.png" id="53_rlbjc"]
 
 [node name="menu" type="Node2D" unique_id=988281303]
 texture_repeat = 2
@@ -54,6 +70,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_con2f")
+metadata/_edit_use_anchors_ = true
 
 [node name="static" type="ColorRect" parent="bg" unique_id=334558398]
 layout_mode = 0
@@ -74,6 +91,7 @@ stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="AIControlBar" type="Control" parent="." unique_id=1580082266]
+texture_repeat = 1
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1673.0
@@ -89,6 +107,7 @@ offset_left = -3.0
 offset_top = -5.0
 offset_right = 197.0
 offset_bottom = 70.0
+action_mode = 0
 texture_normal = ExtResource("5_v86rl")
 texture_pressed = ExtResource("6_13sgg")
 metadata/_edit_lock_ = true
@@ -99,6 +118,7 @@ offset_left = -3.0
 offset_top = 70.0
 offset_right = 197.0
 offset_bottom = 145.0
+action_mode = 0
 texture_normal = ExtResource("7_13sgg")
 texture_pressed = ExtResource("9_g6gyw")
 metadata/_edit_lock_ = true
@@ -109,6 +129,7 @@ offset_left = -3.0
 offset_top = 145.0
 offset_right = 197.0
 offset_bottom = 220.0
+action_mode = 0
 texture_normal = ExtResource("10_3dmrc")
 texture_pressed = ExtResource("11_81l6r")
 metadata/_edit_lock_ = true
@@ -119,6 +140,7 @@ offset_left = -3.0
 offset_top = 220.0
 offset_right = 197.0
 offset_bottom = 295.0
+action_mode = 0
 texture_normal = ExtResource("12_rsfmq")
 texture_pressed = ExtResource("13_oi1it")
 metadata/_edit_lock_ = true
@@ -129,8 +151,193 @@ offset_left = -3.0
 offset_top = 295.0
 offset_right = 197.0
 offset_bottom = 370.0001
+action_mode = 0
 texture_normal = ExtResource("14_fy8yy")
 texture_pressed = ExtResource("15_6wigr")
+metadata/_edit_lock_ = true
+
+[node name="STATIC" type="Control" parent="." unique_id=2112220855]
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1644.0
+offset_top = 894.0
+offset_right = 1684.0
+offset_bottom = 934.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Highscore" type="Sprite2D" parent="STATIC" unique_id=94298047]
+position = Vector2(172, -247)
+texture = ExtResource("34_jlmas")
+metadata/_edit_lock_ = true
+
+[node name="5020Best" type="Sprite2D" parent="STATIC" unique_id=1011108803]
+position = Vector2(169, -160)
+texture = ExtResource("35_qfcyc")
+metadata/_edit_lock_ = true
+
+[node name="holddel" type="Sprite2D" parent="STATIC" unique_id=637241014]
+position = Vector2(161, -97)
+texture = ExtResource("36_spe5f")
+metadata/_edit_lock_ = true
+
+[node name="ShowCharInfo" type="Sprite2D" parent="STATIC" unique_id=1159068569]
+texture_repeat = 1
+position = Vector2(82, -28)
+texture = ExtResource("37_jcbs5")
+metadata/_edit_lock_ = true
+
+[node name="VisualEffects" type="Sprite2D" parent="STATIC" unique_id=1804267787]
+texture_repeat = 1
+position = Vector2(91, -67)
+texture = ExtResource("38_jamij")
+metadata/_edit_lock_ = true
+
+[node name="PointValue" type="Sprite2D" parent="STATIC" unique_id=724122459]
+position = Vector2(171, -341)
+texture = ExtResource("38_nsg6j")
+metadata/_edit_lock_ = true
+
+[node name="Toggles" type="Control" parent="." unique_id=891149789]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1770.0
+offset_top = 811.0
+offset_right = 1802.0
+offset_bottom = 885.0
+script = ExtResource("39_jcbs5")
+metadata/_edit_lock_ = true
+
+[node name="vfx" type="TextureButton" parent="Toggles" unique_id=1202591906]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = ExtResource("39_spe5f")
+texture_pressed = ExtResource("40_jcbs5")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="sci" type="TextureButton" parent="Toggles" unique_id=1559552247]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 32.0
+offset_bottom = 74.0
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = ExtResource("39_spe5f")
+texture_pressed = ExtResource("40_jcbs5")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="PointsValue" type="Control" parent="." unique_id=1530497398]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1861.0
+offset_top = 570.0
+offset_right = 1895.0
+offset_bottom = 616.0
+script = ExtResource("42_qwtqu")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="HighScore" type="Control" parent="." unique_id=1206017779]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1861.0
+offset_top = 661.0
+offset_right = 1895.0
+offset_bottom = 707.0
+script = ExtResource("44_qwtqu")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Control" parent="." unique_id=932026068]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="b" type="TextureButton" parent="Settings" unique_id=1191066090]
+layout_mode = 0
+offset_left = 1812.0
+offset_top = 809.0
+offset_right = 1890.0
+offset_bottom = 887.0
+texture_normal = ExtResource("27_dg0of")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Go" type="TextureButton" parent="." unique_id=1637977749]
+offset_left = 1644.0
+offset_top = 894.0
+offset_right = 1894.0
+offset_bottom = 1044.0
+texture_normal = ExtResource("31_0ndyk")
+texture_pressed = ExtResource("32_0qewb")
+script = ExtResource("31_a04p5")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="BestTime" type="Control" parent="." unique_id=836391654]
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1812.0
+offset_top = 754.0
+offset_right = 1889.0
+offset_bottom = 768.0
+grow_horizontal = 0
+script = ExtResource("47_tg78l")
+metadata/_edit_lock_ = true
+
+[node name="tenth" type="Sprite2D" parent="BestTime" unique_id=1768006234]
+position = Vector2(71, 8)
+texture = ExtResource("48_055ta")
+metadata/_edit_lock_ = true
+
+[node name="sec" type="Sprite2D" parent="BestTime" unique_id=1292855975]
+position = Vector2(46, 8)
+texture = ExtResource("48_055ta")
+metadata/_edit_lock_ = true
+
+[node name="dec" type="Sprite2D" parent="BestTime" unique_id=1538701401]
+position = Vector2(31, 8)
+texture = ExtResource("49_6jp1x")
+metadata/_edit_lock_ = true
+
+[node name="min" type="Sprite2D" parent="BestTime" unique_id=1074467891]
+position = Vector2(6, 8)
+texture = ExtResource("50_dslam")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="BestTime" unique_id=1235615893]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 11.0
+offset_right = 60.0
+offset_bottom = 14.0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="BestTime" unique_id=1730443744]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 19.0
+offset_bottom = 13.0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="BestTime" unique_id=2034544921]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 6.0
 metadata/_edit_lock_ = true
 
 [node name="Customization" type="Control" parent="." unique_id=399421857]
@@ -178,6 +385,7 @@ metadata/_edit_lock_ = true
 
 [node name="TAB" type="TextureRect" parent="Customization" unique_id=1914741261]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = -10.0
 offset_top = -382.0
@@ -188,6 +396,7 @@ metadata/_edit_lock_ = true
 
 [node name="officeTab" type="Control" parent="Customization" unique_id=1773798873]
 visible = false
+z_index = 3
 anchors_preset = 0
 offset_left = -10.0
 offset_top = -382.0
@@ -201,6 +410,7 @@ offset_left = 22.0
 offset_top = 16.0
 offset_right = 242.0
 offset_bottom = 236.0
+action_mode = 0
 texture_normal = ExtResource("21_g54pe")
 metadata/_edit_lock_ = true
 
@@ -210,6 +420,7 @@ offset_left = 22.0
 offset_top = 256.0
 offset_right = 242.0
 offset_bottom = 476.0
+action_mode = 0
 texture_normal = ExtResource("22_48ryc")
 metadata/_edit_lock_ = true
 
@@ -219,6 +430,7 @@ offset_left = 22.0
 offset_top = 496.0
 offset_right = 242.0
 offset_bottom = 716.0
+action_mode = 0
 texture_normal = ExtResource("23_vhsb5")
 metadata/_edit_lock_ = true
 
@@ -228,6 +440,7 @@ offset_left = 22.0
 offset_top = 736.0
 offset_right = 242.0
 offset_bottom = 956.0
+action_mode = 0
 texture_normal = ExtResource("24_hwfsl")
 metadata/_edit_lock_ = true
 
@@ -256,47 +469,85 @@ offset_bottom = 1021.0
 scale = Vector2(0.8818182, 0.8818182)
 texture_normal = ExtResource("27_b5gwo")
 
-[node name="Go" type="TextureButton" parent="." unique_id=1637977749]
-offset_left = 1644.0
-offset_top = 894.0
-offset_right = 1894.0
-offset_bottom = 1044.0
-texture_normal = ExtResource("31_0ndyk")
-texture_pressed = ExtResource("32_0qewb")
-script = ExtResource("31_a04p5")
-
-[node name="Ref" type="Sprite2D" parent="." unique_id=1989011523]
-position = Vector2(960, 540)
-texture = ExtResource("1_vjb58")
+[node name="powerupsTab" type="Control" parent="Customization" unique_id=797620622]
+visible = false
+z_index = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -382.0
+offset_right = 254.0
+offset_bottom = 642.0
 metadata/_edit_lock_ = true
 
-[node name="STATIC" type="Control" parent="." unique_id=2112220855]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1644.0
-offset_top = 894.0
-offset_right = 1684.0
-offset_bottom = 934.0
+[node name="0" type="TextureButton" parent="Customization/powerupsTab" unique_id=1754247846]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 242.0
+offset_bottom = 236.0
+action_mode = 0
+texture_normal = ExtResource("49_al2sc")
+metadata/_edit_lock_ = true
 
-[node name="Highscore" type="Sprite2D" parent="STATIC" unique_id=94298047]
-position = Vector2(172, -247)
-texture = ExtResource("34_jlmas")
+[node name="1" type="TextureButton" parent="Customization/powerupsTab" unique_id=760527258]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 256.0
+offset_right = 242.0
+offset_bottom = 476.0
+action_mode = 0
+texture_normal = ExtResource("50_ygt0d")
+metadata/_edit_lock_ = true
 
-[node name="5020Best" type="Sprite2D" parent="STATIC" unique_id=1011108803]
-position = Vector2(169, -160)
-texture = ExtResource("35_qfcyc")
+[node name="2" type="TextureButton" parent="Customization/powerupsTab" unique_id=1783144258]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 496.0
+offset_right = 242.0
+offset_bottom = 716.0
+action_mode = 0
+texture_normal = ExtResource("51_7o74l")
+metadata/_edit_lock_ = true
 
-[node name="holddel" type="Sprite2D" parent="STATIC" unique_id=637241014]
-position = Vector2(161, -97)
-texture = ExtResource("36_spe5f")
+[node name="3" type="TextureButton" parent="Customization/powerupsTab" unique_id=191913703]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 736.0
+offset_right = 242.0
+offset_bottom = 956.0
+action_mode = 0
+texture_normal = ExtResource("52_p2357")
+metadata/_edit_lock_ = true
 
-[node name="ShowCharInfo" type="Sprite2D" parent="STATIC" unique_id=1159068569]
-position = Vector2(82, -28)
-texture = ExtResource("37_jcbs5")
+[node name="OUTLINE0" type="Sprite2D" parent="Customization/powerupsTab" unique_id=1142648919]
+position = Vector2(132, 126)
+texture = ExtResource("53_rlbjc")
+metadata/_edit_lock_ = true
 
-[node name="VisualEffects" type="Sprite2D" parent="STATIC" unique_id=1804267787]
-position = Vector2(91, -67)
-texture = ExtResource("38_jamij")
+[node name="OUTLINE1" type="Sprite2D" parent="Customization/powerupsTab" unique_id=1330148844]
+position = Vector2(132, 366)
+texture = ExtResource("53_rlbjc")
+metadata/_edit_lock_ = true
+
+[node name="OUTLINE2" type="Sprite2D" parent="Customization/powerupsTab" unique_id=783673572]
+position = Vector2(132, 606)
+texture = ExtResource("53_rlbjc")
+metadata/_edit_lock_ = true
+
+[node name="OUTLINE3" type="Sprite2D" parent="Customization/powerupsTab" unique_id=1115227264]
+position = Vector2(132, 846)
+texture = ExtResource("53_rlbjc")
+metadata/_edit_lock_ = true
+
+[node name="ok" type="TextureButton" parent="Customization/powerupsTab" unique_id=2074104430]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 966.0
+offset_right = 272.0
+offset_bottom = 1021.0
+scale = Vector2(0.8818182, 0.8818182)
+texture_normal = ExtResource("27_b5gwo")
+metadata/_edit_lock_ = true
 
 [node name="OVERLAY" type="ColorRect" parent="." unique_id=1538423071]
 visible = false
@@ -311,11 +562,19 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("34_0qewb")
 metadata/_edit_lock_ = true
 
+[node name="Ref" type="Sprite2D" parent="." unique_id=1989011523]
+visible = false
+modulate = Color(1, 1, 1, 0.56078434)
+position = Vector2(960, 540)
+texture = ExtResource("1_vjb58")
+
 [connection signal="pressed" from="AIControlBar/set0" to="AIControlBar" method="set_ai" binds= [true, 0]]
 [connection signal="pressed" from="AIControlBar/add1" to="AIControlBar" method="set_ai" binds= [false, 1]]
 [connection signal="pressed" from="AIControlBar/set10" to="AIControlBar" method="set_ai" binds= [true, 10]]
 [connection signal="pressed" from="AIControlBar/set20" to="AIControlBar" method="set_ai" binds= [true, 20]]
 [connection signal="pressed" from="AIControlBar/radom" to="AIControlBar" method="set_ai" binds= [false, 0, true]]
+[connection signal="toggled" from="Toggles/vfx" to="Toggles" method="_vfx"]
+[connection signal="pressed" from="Go" to="OVERLAY" method="_on_go_pressed"]
 [connection signal="pressed" from="Customization/buttons/office" to="Customization" method="_office_tab"]
 [connection signal="pressed" from="Customization/buttons/powerups" to="Customization" method="_powerups_tab"]
 [connection signal="pressed" from="Customization/buttons/challenges" to="Customization" method="_challenge_tab"]
@@ -324,4 +583,8 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Customization/officeTab/2" to="Customization" method="_pick_office" binds= [2]]
 [connection signal="pressed" from="Customization/officeTab/3" to="Customization" method="_pick_office" binds= [3]]
 [connection signal="pressed" from="Customization/officeTab/ok" to="Customization" method="_OK"]
-[connection signal="pressed" from="Go" to="OVERLAY" method="_on_go_pressed"]
+[connection signal="pressed" from="Customization/powerupsTab/0" to="Customization" method="_pick_powerup" binds= [0]]
+[connection signal="pressed" from="Customization/powerupsTab/1" to="Customization" method="_pick_powerup" binds= [1]]
+[connection signal="pressed" from="Customization/powerupsTab/2" to="Customization" method="_pick_powerup" binds= [2]]
+[connection signal="pressed" from="Customization/powerupsTab/3" to="Customization" method="_pick_powerup" binds= [3]]
+[connection signal="pressed" from="Customization/powerupsTab/ok" to="Customization" method="_OK"]

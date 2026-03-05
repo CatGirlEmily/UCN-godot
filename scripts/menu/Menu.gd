@@ -18,3 +18,6 @@ func _setup_char():
 		s.position = Vector2((s.get_child(0).get_size().x+10) * col, (s.get_child(0).get_size().y+5) * row) + offset
 
 		s.setup(i)	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("DEL"): global.deleteSaveData(); get_tree().change_scene_to_file("res://scenes/menu.tscn")	
