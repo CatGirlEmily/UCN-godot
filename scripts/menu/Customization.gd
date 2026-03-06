@@ -1,22 +1,46 @@
 extends Control
 
+const challengeNames := [
+	"ch1",
+	"ch2",
+	"ch3",
+	"ch4",
+	"ch5",
+	"ch6",
+	"ch7",
+	"ch8",
+	"ch9",
+	"ch10",
+	"ch11",
+	"ch12",
+	"ch13",
+	"ch14",
+	"ch15",
+	"ch16",
+]
+
 @onready var NODE_menu := get_parent()
+@onready var labelSetting := load("res://other_res/challengeLabel.tres")
 @onready var outline_t := [load("res://sprites/menu/tab/office/outline1.png"),load("res://sprites/menu/tab/office/outline2.png")]
 @onready var outline_t2 := [load("res://sprites/menu/tab/powerups/outline1.png"),load("res://sprites/menu/tab/powerups/outline2.png")]
-
+@onready var ch_t := [load("res://sprites/menu/tab/challenges/challenge.png"), load("res://sprites/menu/tab/challenges/challenge_sel.png")]
 var outline_timer := 0
 const score_req := [0,2000,5000,8000]
 var tabType := -1
+var challenge_nodes = []
+var old_challenge
 
 func _ready() -> void:
 	$buttons.show()
 	$TAB.hide()
 	$officeTab.hide()
 	$powerupsTab.hide()
+	$challengesTab.hide()
 
 func _process(_delta: float) -> void:
 	if (tabType == 1): _office_loop()
 	if (tabType == 2): _powerups_loop()
+	if (tabType == 3): _challenges_loop()
 	
 
 func on_tab(entry: bool):
@@ -28,12 +52,13 @@ func on_tab(entry: bool):
 		$TAB.hide()
 		$officeTab.hide()
 		$powerupsTab.hide()
+		$challengesTab.hide()
 		$buttons.show()
 		NODE_menu.tabVisible = false
-		
-func _OK() -> void:
-	on_tab(false)
 ######################## office tab #########################
+func _office_OK() -> void:
+	on_tab(false)
+	
 func _office_tab() -> void:
 	outline_timer = 0
 	on_tab(true)
@@ -104,4 +129,52 @@ func _pick_powerup(pu: int) -> void:
 	
 ##################### challenges #############################
 func _challenge_tab() -> void:
+	NODE_menu.canChangeAI = false
+	$challengesTab.show()
+	tabType = 3
+	global.selectedChallenge = 0
+	old_challenge = -1
+	
+	if challenge_nodes.is_empty(): _setup_challenges()
 	on_tab(true)
+
+func _challenges_loop() -> void:
+	if old_challenge == global.selectedChallenge: return
+	
+	if (old_challenge >= 0):
+		challenge_nodes[old_challenge].texture_normal = ch_t[0]
+	challenge_nodes[global.selectedChallenge].texture_normal = ch_t[1]
+	old_challenge = global.selectedChallenge
+
+func _setup_challenges() -> void:
+	# lambda here doesnt work. i dont know why either.
+	for i in range(16):
+		# button
+		var ch := TextureButton.new()
+		ch.texture_normal = ch_t[0]
+		ch.position = Vector2(7,12)
+		ch.position.y += i * 54
+		ch.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+		ch.pressed.connect(_ch_select.bind(i))
+		$TAB.add_child(ch)
+		
+		# label
+		var lb = Label.new()
+		lb.position = ch.position
+		lb.position += Vector2(23,15)
+		lb.text = challengeNames[i]
+		lb.label_settings = labelSetting
+		lb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		lb.modulate.a = 0.9
+		$TAB.add_child(lb)
+		
+		# append to the list
+		challenge_nodes.append(ch)
+
+func _ch_select(id: int) -> void:
+	print("WORKS ", id)
+	#	global.selectedChallenge = id
+
+func _ch_cancel() -> void:
+	NODE_menu.canChangeAI = true
+	on_tab(false)

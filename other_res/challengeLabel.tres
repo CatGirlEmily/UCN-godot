@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://blglnxx46j172"]
+
+[ext_resource type="FontFile" uid="uid://d2aa2wepp5wu" path="res://other_res/arialnarrow.ttf" id="1_4ndsj"]
+
+[resource]
+font = ExtResource("1_4ndsj")
+font_size = 24

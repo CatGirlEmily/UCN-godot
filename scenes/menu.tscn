@@ -49,8 +49,10 @@
 [ext_resource type="Script" uid="uid://bpyycqie3kpwt" path="res://scripts/menu/BestTime.gd" id="47_tg78l"]
 [ext_resource type="Texture2D" uid="uid://dnknmdtmu77pc" path="res://sprites/font/timer-scattered/0.png" id="48_055ta"]
 [ext_resource type="Texture2D" uid="uid://dfhv17m642cmj" path="res://sprites/font/timer-scattered/3.png" id="49_6jp1x"]
+[ext_resource type="Texture2D" uid="uid://dtjt77aogw5ky" path="res://sprites/menu/tab/challenges/cancel.png" id="49_7o74l"]
 [ext_resource type="Texture2D" uid="uid://kkqlw1440tdp" path="res://sprites/menu/tab/powerups/0.png" id="49_al2sc"]
 [ext_resource type="Texture2D" uid="uid://dq6uy36rcy1on" path="res://sprites/font/timer-scattered/4.png" id="50_dslam"]
+[ext_resource type="Texture2D" uid="uid://iwxkl2w7wrve" path="res://sprites/menu/tab/challenges/go.png" id="50_p2357"]
 [ext_resource type="Texture2D" uid="uid://cm7t5ipdxf7ui" path="res://sprites/menu/tab/powerups/1.png" id="50_ygt0d"]
 [ext_resource type="Texture2D" uid="uid://dynlcyayevc0h" path="res://sprites/menu/tab/powerups/2.png" id="51_7o74l"]
 [ext_resource type="Texture2D" uid="uid://y7ay4jnecox1" path="res://sprites/menu/tab/powerups/3.png" id="52_p2357"]
@@ -384,7 +386,6 @@ texture_normal = ExtResource("18_oi1it")
 metadata/_edit_lock_ = true
 
 [node name="TAB" type="TextureRect" parent="Customization" unique_id=1914741261]
-visible = false
 z_index = 2
 layout_mode = 0
 offset_left = -10.0
@@ -402,6 +403,7 @@ offset_left = -10.0
 offset_top = -382.0
 offset_right = 254.0
 offset_bottom = 642.0
+mouse_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="0" type="TextureButton" parent="Customization/officeTab" unique_id=1014461270]
@@ -477,6 +479,7 @@ offset_left = -10.0
 offset_top = -382.0
 offset_right = 254.0
 offset_bottom = 642.0
+mouse_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="0" type="TextureButton" parent="Customization/powerupsTab" unique_id=1754247846]
@@ -549,6 +552,37 @@ scale = Vector2(0.8818182, 0.8818182)
 texture_normal = ExtResource("27_b5gwo")
 metadata/_edit_lock_ = true
 
+[node name="challengesTab" type="Control" parent="Customization" unique_id=1270955288]
+visible = false
+z_index = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -382.0
+offset_right = 254.0
+offset_bottom = 642.0
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="cancel" type="TextureButton" parent="Customization/challengesTab" unique_id=94230417]
+texture_repeat = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 957.0
+offset_right = 257.0
+offset_bottom = 1012.0
+texture_normal = ExtResource("49_7o74l")
+metadata/_edit_lock_ = true
+
+[node name="go" type="TextureButton" parent="Customization/challengesTab" unique_id=1323394566]
+texture_repeat = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 902.0
+offset_right = 257.0
+offset_bottom = 957.0
+texture_normal = ExtResource("50_p2357")
+metadata/_edit_lock_ = true
+
 [node name="OVERLAY" type="ColorRect" parent="." unique_id=1538423071]
 visible = false
 z_index = 99
@@ -579,13 +613,7 @@ texture = ExtResource("1_vjb58")
 [connection signal="pressed" from="Customization/buttons/office" to="Customization" method="_office_tab"]
 [connection signal="pressed" from="Customization/buttons/powerups" to="Customization" method="_powerups_tab"]
 [connection signal="pressed" from="Customization/buttons/challenges" to="Customization" method="_challenge_tab"]
-[connection signal="pressed" from="Customization/officeTab/0" to="Customization" method="_pick_office" binds= [0]]
-[connection signal="pressed" from="Customization/officeTab/1" to="Customization" method="_pick_office" binds= [1]]
-[connection signal="pressed" from="Customization/officeTab/2" to="Customization" method="_pick_office" binds= [2]]
-[connection signal="pressed" from="Customization/officeTab/3" to="Customization" method="_pick_office" binds= [3]]
-[connection signal="pressed" from="Customization/officeTab/ok" to="Customization" method="_OK"]
-[connection signal="pressed" from="Customization/powerupsTab/0" to="Customization" method="_pick_powerup" binds= [0]]
-[connection signal="pressed" from="Customization/powerupsTab/1" to="Customization" method="_pick_powerup" binds= [1]]
-[connection signal="pressed" from="Customization/powerupsTab/2" to="Customization" method="_pick_powerup" binds= [2]]
-[connection signal="pressed" from="Customization/powerupsTab/3" to="Customization" method="_pick_powerup" binds= [3]]
-[connection signal="pressed" from="Customization/powerupsTab/ok" to="Customization" method="_OK"]
+[connection signal="pressed" from="Customization/officeTab/ok" to="Customization" method="_office_OK"]
+[connection signal="pressed" from="Customization/powerupsTab/ok" to="Customization" method="_office_OK"]
+[connection signal="pressed" from="Customization/challengesTab/cancel" to="Customization" method="_ch_cancel"]
+[connection signal="pressed" from="Customization/challengesTab/go" to="Go" method="_pressed"]

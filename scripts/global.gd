@@ -132,6 +132,7 @@ var POWERUP_3_COINS := false
 var POWERUP_DD_REPEL := false
 var POWERUP_BATTERY := false
 
+var selectedChallenge := 0
 
 var showCharInfo := false
 var visualEffects := false

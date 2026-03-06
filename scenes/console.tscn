@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d217506oe2p01"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_gktpd"]
+
 [node name="Console" type="Control" unique_id=2070378425]
 z_index = 98
 layout_mode = 3
@@ -36,6 +38,7 @@ offset_top = 1.0
 offset_right = 68.0
 offset_bottom = 24.0
 text = "Console"
+label_settings = SubResource("LabelSettings_gktpd")
 
 [node name="TextEdit" type="TextEdit" parent="." unique_id=881889340]
 modulate = Color(1.7686467, 1.7686467, 1.7686467, 1)

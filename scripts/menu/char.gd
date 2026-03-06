@@ -52,6 +52,7 @@ func update_visuals():
 
 func _process(_delta: float) -> void:
 	if (NODE_menu.entering): return
+	if (!NODE_menu.canChangeAI): return
 	
 	update_visuals()
 	# delay so holding isnt registered every frame. registers every 3 frames, unless using scroll
